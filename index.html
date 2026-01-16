@@ -571,39 +571,49 @@
     </footer>
 
     <script>
-              // send massage telegram
     function sendTelegramMessage() {
         const nama = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const pesan = document.getElementById('pesan').value.trim();
 
-        if (!nama || !email || !pesan) {
-            alert("Semua field wajib diisi");
-            fetch("/api/send-telegram", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                    body: JSON.stringify({
-                    nama: nama,
-                    email: email,
-                    pesan: pesan
-                })
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.error) {
-                    alert("Error: " + data.error);
-                } else {
-                    alert("Pesan berhasil dikirim 🚀");
-
-                    document.getElementById("name").value = "";
-                    document.getElementById("email").value = "";
-                    document.getElementById("pesan").value = "";
-                }
-            });
-        }
+    // 1️⃣ VALIDASI → STOP JIKA KOSONG
+    if (!nama || !email || !pesan) {
+        alert("Semua field wajib diisi");
+        return; // ⬅️ INI PENTING
     }
+
+    // 2️⃣ KIRIM KE BACKEND
+    fetch("/api/send-telegram", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nama: nama,
+            email: email,
+            pesan: pesan
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) {
+            alert("Error: " + data.error);
+        } else {
+            alert("Pesan berhasil dikirim 🚀");
+
+            // reset form
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("pesan").value = "";
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Gagal mengirim pesan");
+    });
+}
+
+
               // TYPE.JS SCRIPT
               var typed = new Typed(".typing", {
                   strings: [
