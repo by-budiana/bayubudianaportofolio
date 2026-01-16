@@ -5,22 +5,22 @@ export default async function handler(req, res) {
     }
 
     // DEBUG: kirim balik body
-    const body = req.body;
+    const {nama, email, pesan} = req.body;
 
-    if (!body || !body.message) {
+    if (!nama || !email || !pesan) {
       return res.status(400).json({
         error: "Message missing",
         received: body,
       });
     }
 
-    const message = body.message.trim();
+    const text = `📩 Pesan Kontak Website
 
-    if (!message) {
-      return res.status(400).json({
-        error: "Message empty after trim",
-      });
-    }
+👤 Nama: ${nama}
+📧 Email: ${email}
+
+💬 Pesan:
+${pesan}`;
 
     const response = await fetch(
       `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
