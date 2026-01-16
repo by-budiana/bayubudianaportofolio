@@ -4,22 +4,31 @@ export default async function handler(req, res) {
       return res.status(405).json({ message: "Method not allowed" });
     }
 
-    const { message } = req.body;
+    // DEBUG: kirim balik body
+    const body = req.body;
 
-    const token = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    if (!body || !body.message) {
+      return res.status(400).json({
+        error: "Message missing",
+        received: body,
+      });
+    }
 
-    if (!token || !chatId) {
-      return res.status(500).json({ error: "Env not set" });
+    const message = body.message.trim();
+
+    if (!message) {
+      return res.status(400).json({
+        error: "Message empty after trim",
+      });
     }
 
     const response = await fetch(
-      `https://api.telegram.org/bot${token}/sendMessage`,
+      `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          chat_id: chatId,
+          chat_id: process.env.TELEGRAM_CHAT_ID,
           text: message,
         }),
       }
@@ -28,7 +37,9 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     if (!data.ok) {
-      return res.status(500).json({ error: data.description });
+      return res.status(500).json({
+        telegram_error: data.description,
+      });
     }
 
     return res.json({ success: true });
