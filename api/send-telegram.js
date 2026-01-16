@@ -6,20 +6,14 @@ export default async function handler(req, res) {
 
     const { message } = req.body;
 
-    if (!message) {
-      return res.status(400).json({ error: "Message is empty" });
-    }
-
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!token || !chatId) {
-      return res.status(500).json({
-        error: "Telegram env not set",
-      });
+      return res.status(500).json({ error: "Env not set" });
     }
 
-    const tgResponse = await fetch(
+    const response = await fetch(
       `https://api.telegram.org/bot${token}/sendMessage`,
       {
         method: "POST",
@@ -31,18 +25,14 @@ export default async function handler(req, res) {
       }
     );
 
-    const data = await tgResponse.json();
+    const data = await response.json();
 
     if (!data.ok) {
-      return res.status(500).json({
-        error: data.description,
-      });
+      return res.status(500).json({ error: data.description });
     }
 
     return res.json({ success: true });
   } catch (err) {
-    return res.status(500).json({
-      error: err.message,
-    });
+    return res.status(500).json({ error: err.message });
   }
 }
