@@ -4,16 +4,17 @@ export default async function handler(req, res) {
       return res.status(405).json({ message: "Method not allowed" });
     }
 
-    // DEBUG: kirim balik body
-    const {nama, email, pesan} = req.body;
+    const { nama, email, pesan } = req.body;
 
+    // VALIDASI DATA
     if (!nama || !email || !pesan) {
       return res.status(400).json({
-        error: "Message missing",
-        received: body,
+        error: "Data tidak lengkap",
+        received: req.body,
       });
     }
 
+    // FORMAT PESAN TELEGRAM
     const text = `📩 Pesan Kontak Website
 
 👤 Nama: ${nama}
@@ -22,6 +23,7 @@ export default async function handler(req, res) {
 💬 Pesan:
 ${pesan}`;
 
+    // KIRIM KE TELEGRAM
     const response = await fetch(
       `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
       {
@@ -29,7 +31,7 @@ ${pesan}`;
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           chat_id: process.env.TELEGRAM_CHAT_ID,
-          text: message,
+          text: text, // ✅ PAKAI text, BUKAN message
         }),
       }
     );
