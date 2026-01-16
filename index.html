@@ -460,10 +460,20 @@
     <script>
         // send massage telegram
         function sendTelegramMessage() {
-            const nama = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const pesan = document.getElementById('pesan').value;
+            const nama = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const pesan = document.getElementById('pesan').value.trim();
 
+            if (nama === '' || email === '' || pesan === '') {
+                alert("Semua field harus diisi");
+                return;
+            }
+            const massage =
+                `📩 Pesan Kontak Website\n\n` +
+                `👤 Nama: ${name}\n` +
+                `📧 Email: ${email}\n\n` +
+                `💬 Pesan:\n${pesan}`;
+            
             fetch('api/send-telegram', {
                 method: 'POST',
                 headers: {
@@ -471,9 +481,25 @@
                 },
                 body: JSON.stringify({ nama, email, pesan })
             })
-            .then(() => alert("Pesan terkirim"))
-            .catch(() => alert("Gagal"));
+            .then(res => res.json())
+    .then(data => {
+        if (data.error) {
+            alert("Error: " + data.error);
+        } else {
+            alert("Pesan berhasil dikirim 🚀");
+
+            // Reset form
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("pesan").value = "";
+        }
+    })
+    .catch(err => {
+        alert("Gagal mengirim pesan");
+        console.error(err);
+    });
 }
+
 
 
         // TYPE.JS SCRIPT
