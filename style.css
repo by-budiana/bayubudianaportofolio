@@ -1,0 +1,37 @@
+/* Kontainer utama yang menyembunyikan scrollbar */
+.slider-container {
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  position: relative;
+}
+
+/* Track yang akan bergerak secara horizontal */
+.slider-track {
+  display: flex;
+  width: calc(250px * 16); /* Lebar card x jumlah total card (asli + duplikat) */
+  animation: scroll 30s linear infinite;
+}
+
+/* Ukuran masing-masing item */
+.slide-item {
+  width: 250px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+/* Keyframes untuk menggerakkan slider */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Angka -50% krn kita menduplikasi konten tepat 2x lipat */
+    transform: translateX(-50%);
+  }
+}
+
+/* Berhenti saat kursor diarahkan ke slider */
+.slider-container:hover .slider-track {
+  animation-play-state: paused;
+}

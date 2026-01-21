@@ -1,0 +1,99 @@
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<style>
+/* Kontainer utama yang menyembunyikan scrollbar */
+.slider-container {
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  position: relative;
+}
+
+/* Track yang akan bergerak secara horizontal */
+.slider-track {
+  display: flex;
+  width: calc(250px * 16); /* Lebar card x jumlah total card (asli + duplikat) */
+  animation: scroll 15s linear infinite;
+}
+
+/* Ukuran masing-masing item */
+.slide-item {
+  width: 250px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+/* Keyframes untuk menggerakkan slider */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Angka -50% krn kita menduplikasi konten tepat 2x lipat */
+    transform: translateX(-50%);
+  }
+}
+
+/* Berhenti saat kursor diarahkan ke slider */
+.slider-container:hover .slider-track {
+  animation-play-state: paused;
+}
+</style>
+
+<div class="slider-container">
+  <div class="slider-track">
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-html5 fa-3x text-danger mb-3"></i><h5 class="fw-bold">HTML5</h5><p class="small text-muted mb-0">Struktur Dasar</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-css3-alt fa-3x text-primary mb-3"></i><h5 class="fw-bold">CSS3</h5><p class="small text-muted mb-0">Styling & Layout</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-bootstrap fa-3x mb-3" style="color: #7952b3"></i><h5 class="fw-bold">Bootstrap 5</h5><p class="small text-muted mb-0">Responsive Design</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-js fa-3x text-warning mb-3"></i><h5 class="fw-bold">JavaScript</h5><p class="small text-muted mb-0">Interaktivitas</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-php fa-3x text-info mb-3"></i><h5 class="fw-bold">PHP</h5><p class="small text-muted mb-0">Backend Development</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fas fa-database fa-3x text-secondary mb-3"></i><h5 class="fw-bold">MySQL</h5><p class="small text-muted mb-0">Manajemen Database</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-git-alt fa-3x mb-3" style="color: #f1502f"></i><h5 class="fw-bold">Git</h5><p class="small text-muted mb-0">Version Control</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fas fa-palette fa-3x text-success mb-3"></i><h5 class="fw-bold">UI/UX</h5><p class="small text-muted mb-0">Desain Antarmuka</p></div></div>
+
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-html5 fa-3x text-danger mb-3"></i><h5 class="fw-bold">HTML5</h5><p class="small text-muted mb-0">Struktur Dasar</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-css3-alt fa-3x text-primary mb-3"></i><h5 class="fw-bold">CSS3</h5><p class="small text-muted mb-0">Styling & Layout</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-bootstrap fa-3x mb-3" style="color: #7952b3"></i><h5 class="fw-bold">Bootstrap 5</h5><p class="small text-muted mb-0">Responsive Design</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-js fa-3x text-warning mb-3"></i><h5 class="fw-bold">JavaScript</h5><p class="small text-muted mb-0">Interaktivitas</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-php fa-3x text-info mb-3"></i><h5 class="fw-bold">PHP</h5><p class="small text-muted mb-0">Backend Development</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fas fa-database fa-3x text-secondary mb-3"></i><h5 class="fw-bold">MySQL</h5><p class="small text-muted mb-0">Manajemen Database</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fab fa-git-alt fa-3x mb-3" style="color: #f1502f"></i><h5 class="fw-bold">Git</h5><p class="small text-muted mb-0">Version Control</p></div></div>
+    <div class="slide-item"><div class="p-4 border rounded shadow-sm h-100 text-center"><i class="fas fa-palette fa-3x text-success mb-3"></i><h5 class="fw-bold">UI/UX</h5><p class="small text-muted mb-0">Desain Antarmuka</p></div></div>
+  </div>
+</div>
+
+<!-- <a class="weatherwidget-io" href="https://forecast7.com/en/n8d67115d21/denpasar/" data-label_1="DENPASAR" data-label_2="WEATHER" >DENPASAR WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+
+<a class="weatherwidget-io" href="https://forecast7.com/en/n8d67115d21/denpasar/" data-label_1="DENPASAR" data-label_2="WEATHER" data-theme="pure" >DENPASAR WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script> -->
+
+
+<a class="weatherwidget-io" href="https://forecast7.com/en/n8d67115d21/denpasar/" data-label_1="DENPASAR" data-label_2="WEATHER" data-theme="blue-mountains" >DENPASAR WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+<style>
+.weatherwidget-io {
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+</style>

@@ -220,6 +220,70 @@
           font-size: 1.25rem;
         }
       }
+
+      /* Kustomisasi tambahan agar lebih cantik dari Bootstrap standar */
+      .btn-primary-custom {
+        background-color: #008080; /* Warna teal seperti di gambar Anda */
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary-custom:hover {
+        background-color: #006666;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 128, 128, 0.3);
+      }
+
+      .form-control:focus {
+        background-color: #fff !important;
+        border: 1px solid #008080 !important;
+        box-shadow: none;
+      }
+
+      .card {
+        background: #ffffff;
+      }
+
+      /* Kontainer utama yang menyembunyikan scrollbar */
+      .slider-container {
+        overflow: hidden;
+        /* padding: 20px 0; */
+        /* background: white; */
+        position: relative;
+      }
+
+      /* Track yang akan bergerak secara horizontal */
+      .slider-track {
+        display: flex;
+        width: calc(
+          200px * 16
+        ); /* Lebar card x jumlah total card (asli + duplikat) */
+        animation: scroll 30s linear infinite;
+      }
+
+      /* Ukuran masing-masing item */
+      .slide-item {
+        width: 200px;
+        padding: 15px;
+        flex-shrink: 0;
+      }
+
+      /* Keyframes untuk menggerakkan slider */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* Angka -50% krn kita menduplikasi konten tepat 2x lipat */
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Berhenti saat kursor diarahkan ke slider */
+      .slider-container:hover .slider-track {
+        animation-play-state: paused;
+      } 
     </style>
   </head>
 
@@ -290,7 +354,7 @@
             style="width: 280px; height: 280px"
           >
             <img
-              src="<?= base_url('images/by.jpg') ?>"
+              src="/img/by.jpg"
               alt="Profile Picture"
               class="img-fluid rounded-circle"
               style="object-fit: cover; width: 100%; height: 100%"
@@ -320,7 +384,7 @@
               <div class="card-body text-center">
                 <h5 class="card-title fw-bold">Project Todo List</h5>
                 <img
-                  src="<?= base_url('images/todo.png')?>"
+                  src="/img/todo.png"
                   alt=""
                   style="width: 100%; height: 100"
                 />
@@ -344,7 +408,7 @@
               <div class="card-body text-center">
                 <h5 class="card-title fw-bold">Project kostan.app</h5>
                 <img
-                  src="<?= base_url('images/kost.png') ?>"
+                  src="/img/kost.png"
                   alt=""
                   style="width: 100%; height: 100"
                 />
@@ -368,7 +432,295 @@
               <div class="card-body text-center">
                 <h5 class="card-title fw-bold">Project Sistem simrm</h5>
                 <img
-                  src="<?= base_url('images/sistem-simrm.png') ?>"
+                  src="/img/sistem-simrm.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
+                  alt=""
+                  style="width: 100%; height: 100"
+                />
+                <p class="card-text small text-muted">
+                  Sistem simrm ini menggunakan Laravel & filament
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary-custom btn-sm rounded-pill"
+                  id="project"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div
+              class="card h-100 shadow-sm border-0"
+              style="background-color: var(--bg-component)"
+            >
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">Project Sistem simrm</h5>
+                <img
+                  src="/img/lazzhelmet.png"
                   alt=""
                   style="width: 100%; height: 100"
                 />
@@ -388,166 +740,198 @@
       </div>
     </section>
 
-    <hr class="my-5 opacity-25" />
+    <hr>
+    <section>
+      <h3 class="text-center mt-5 fw-bold" style="color: var(--accent-color)">💻Keahlian</h3>
+      <div class="slider-container">
+        <div class="slider-track">
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-html5 fa-3x text-danger mb-3 meduim"></i>
+              <h6 class="fw-bold">HTML5</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-css3-alt fa-3x text-primary mb-3 medium"></i>
+              <h6 class="fw-bold">CSS3</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-bootstrap fa-3x mb-3 medium" style="color: #7952b3"></i>
+              <h6 class="fw-bold">Bootstrap 5</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-js fa-3x text-warning mb-3 medium"></i>
+              <h6 class="fw-bold">JavaScript</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-php fa-3x text-info mb-3 medium"></i>
+              <h6 class="fw-bold">PHP</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fas fa-database fa-3x text-secondary mb-3 medium"></i>
+              <h6 class="fw-bold">MySQL</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-git-alt fa-3x mb-3 medium" style="color: #f1502f"></i>
+              <h6 class="fw-bold">Git</h6>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fas fa-palette fa-3x text-success mb-3 medium"></i>
+              <h6 class="fw-bold">UI/UX</h6>
+            </div>
+          </div>
 
-    <section class="container-fluid py-5" id="skills">
-      <div class="px-4">
-        <h2 class="text-center mb-5 fw-bold" style="color: var(--accent-color)">
-          🚀 Keahlian Saya
-        </h2>
-        <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fab fa-html5 fa-3x text-danger mb-3"></i>
-              <h5 class="fw-bold">HTML5</h5>
-              <p class="small text-muted mb-0">Struktur Dasar</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-html5 fa-3x text-danger mb-3 medium"></i>
+              <h6 class="fw-bold">HTML5</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fab fa-css3-alt fa-3x text-primary mb-3"></i>
-              <h5 class="fw-bold">CSS3</h5>
-              <p class="small text-muted mb-0">Styling & Layout</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-css3-alt fa-3x text-primary mb-3 medium"></i>
+              <h6 class="fw-bold">CSS3</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fab fa-bootstrap fa-3x mb-3" style="color: #7952b3"></i>
-              <h5 class="fw-bold">Bootstrap 5</h5>
-              <p class="small text-muted mb-0">Responsive Design</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-bootstrap fa-3x mb-3 medium" style="color: #7952b3"></i>
+              <h6 class="fw-bold">Bootstrap 5</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fab fa-js fa-3x text-warning mb-3"></i>
-              <h5 class="fw-bold">JavaScript</h5>
-              <p class="small text-muted mb-0">Interaktivitas</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-js fa-3x text-warning mb-3 medium"></i>
+              <h6 class="fw-bold">JavaScript</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fab fa-php fa-3x text-info mb-3"></i>
-              <h5 class="fw-bold">PHP</h5>
-              <p class="small text-muted mb-0">Backend Development</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-php fa-3x text-info mb-3 medium"></i>
+              <h6 class="fw-bold">PHP</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fas fa-database fa-3x text-secondary mb-3"></i>
-              <h5 class="fw-bold">MySQL</h5>
-              <p class="small text-muted mb-0">Manajemen Database</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fas fa-database fa-3x text-secondary mb-3 medium"></i>
+              <h6 class="fw-bold ">MySQL</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fab fa-git-alt fa-3x mb-3" style="color: #f1502f"></i>
-              <h5 class="fw-bold">Git</h5>
-              <p class="small text-muted mb-0">Version Control</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fab fa-git-alt fa-3x mb-3 medium" style="color: #f1502f"></i>
+              <h6 class="fw-bold">Git</h6>
             </div>
           </div>
-          <div class="col">
-            <div class="p-4 border rounded shadow-sm h-100">
-              <i class="fas fa-palette fa-3x text-success mb-3"></i>
-              <h5 class="fw-bold">UI/UX</h5>
-              <p class="small text-muted mb-0">Desain Antarmuka</p>
+          <div class="slide-item">
+            <div class="p-4 border rounded shadow-sm text-center">
+              <i class="fas fa-palette fa-3x text-success mb-3 medium"></i>
+              <h6 class="fw-bold">UI/UX</h6>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <hr class="my-5 opacity-25" />
+    <hr>
+    <h3 class="text-center mt-5 fw-bold" style="color: var(--accent-color);">👤Kontak</h3>
+    <section class="container-fluid py-3" id="contact">
+      <div class="row justify-content-center mt-3">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="row g-0">
+              <div
+                class="col-lg-4 bg-primary-custom d-none d-lg-flex align-items-center justify-content-center p-4 text-white text-center"
+              >
+                <div>
+                  <i class="fas fa-paper-plane fa-3x mb-3"></i>
+                  <h4 class="fw-bold">Ayo Terhubung!</h4>
+                  <p class="small opacity-75">
+                    Saya biasanya membalas dalam waktu kurang dari 24 jam.
+                  </p>
+                </div>
+              </div>
 
-    <section class="container-fluid py-5" id="contact">
-      <div class="px-4">
-        <h2 class="text-center mb-5 fw-bold" style="color: var(--accent-color)">
-          📞 Hubungi Saya
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-md-10 col-lg-8">
-            <p class="text-center mb-5 fs-5 text-nav-light">
-              Tertarik dengan keahlian dan proyek saya? Mari kita diskusikan
-              kolaborasi Anda berikutnya!
-            </p>
+              <div class="col-lg-8">
+                <div class="card-body p-4 p-md-5">
+                  <div class="mb-4">
+                    <h5 class="fw-bold mb-1">📩 Kirim Pesan Cepat</h5>
+                    <p class="text-muted small">
+                      Pesan Anda akan langsung terkirim ke Telegram saya.
+                    </p>
+                  </div>
 
-            <div
-              class="d-flex justify-content-center flex-wrap gap-3 gap-md-4 mb-5"
-            >
-              <a
-                href="mailto:bayubudiana93@gmail.com"
-                target="_blank"
-                class="btn d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
-              >
-                <i class="fas fa-envelope fa-lg"></i> Email
-              </a>
-              <a
-                href="https://linkedin.com/in/bayubudiana"
-                target="_blank"
-                class="btn d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
-              >
-                <i class="fab fa-linkedin fa-lg"></i> LinkedIn
-              </a>
-              <a
-                href="https://github.com/by.budiana"
-                target="_blank"
-                class="btn d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
-              >
-                <i class="fab fa-github fa-lg"></i> GitHub
-              </a>
-              <a
-                href="https://instagram.com/bayubayu51"
-                target="_blank"
-                class="btn d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
-              >
-                <i class="fab fa-instagram fa-lg"></i> Instagram
-              </a>
-            </div>
+                  <form id="contactForm">
+                    <div class="mb-3">
+                      <label class="form-label small fw-bold text-secondary"
+                        >Nama Lengkap</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-0"
+                          ><i class="fas fa-user text-muted"></i
+                        ></span>
+                        <input
+                          id="name"
+                          type="text"
+                          class="form-control bg-light border-0"
+                          placeholder="Contoh: Budi Santoso"
+                          required
+                        />
+                      </div>
+                    </div>
 
-            <div
-              class="card shadow-lg mx-auto"
-              style="background-color: var(--bg-component); border-radius: 1rem"
-            >
-              <div class="d-flex justify-content-center">
-                <div
-                  class="card"
-                  style="
-                    max-width: 500px;
-                    width: 100%;
-                    border: none;
-                    border-radius: 1rem;
-                  "
-                >
-                  <div class="card-body p-4 p-md-5">
-                    <h5 class="card-title fw-bold mb-4 text-start">
-                      📌 Kirim Pesan Sekarang Untuk Info Lebih Lanjut
-                    </h5>
-                    <ul class="list-unstyled fs-6 text-start">
-                      <input
-                        id="name"
-                        type="text"
-                        class="form-control mb-3"
-                        placeholder="Nama Lengkap"
-                      />
-                      <input
-                        id="email"
-                        type="email"
-                        class="form-control mb-3"
-                        placeholder="Email Anda"
-                      />
+                    <div class="mb-3">
+                      <label class="form-label small fw-bold text-secondary"
+                        >Email Anda</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text bg-light border-0"
+                          ><i class="fas fa-envelope text-muted"></i
+                        ></span>
+                        <input
+                          id="email"
+                          type="email"
+                          class="form-control bg-light border-0"
+                          placeholder="budi@email.com"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label small fw-bold text-secondary"
+                        >Pesan</label
+                      >
                       <textarea
                         id="pesan"
-                        class="form-control mb-3"
+                        class="form-control bg-light border-0"
                         rows="4"
-                        placeholder="Pesan Anda"
+                        placeholder="Apa yang bisa saya bantu?"
+                        required
                       ></textarea>
-                      <button
-                        onclick="sendTelegramMessage()"
-                        class="btn btn-primary-custom w-100 rounded-pill"
-                      >
-                        Kirim Pesan
-                      </button>
-                    </ul>
-                  </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onclick="sendTelegramMessage()"
+                      class="btn btn-custom w-100 rounded-pill py-3 fw-bold shadow-sm transition-up"
+                    >
+                      <i class="fab fa-telegram-plane me-2"></i> Kirim Sekarang
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -571,86 +955,87 @@
     </footer>
 
     <script>
-    function sendTelegramMessage() {
-        const nama = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const pesan = document.getElementById('pesan').value.trim();
+      function sendTelegramMessage() {
+        const nama = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
 
-    // 1️⃣ VALIDASI → STOP JIKA KOSONG
-    if (!nama || !email || !pesan) {
-        alert("Semua field wajib diisi");
-        return; // ⬅️ INI PENTING
-    }
+        // 1️⃣ VALIDASI → STOP JIKA KOSONG
+        if (!nama || !email || !pesan) {
+          alert("Semua field wajib diisi");
+          return; // ⬅️ INI PENTING
+        }
 
-    // 2️⃣ KIRIM KE BACKEND
-    fetch("/api/send-telegram", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
+        // 2️⃣ KIRIM KE BACKEND
+        fetch("/api/send-telegram", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
             nama: nama,
             email: email,
-            pesan: pesan
+            pesan: pesan,
+          }),
         })
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.error) {
-            alert("Error: " + data.error);
-        } else {
-            alert("Pesan berhasil dikirim 🚀");
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.error) {
+              alert("Error: " + data.error);
+            } else {
+              alert("Pesan berhasil dikirim 🚀");
 
-            // reset form
-            document.getElementById("name").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("pesan").value = "";
+              // reset form
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("pesan").value = "";
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+            alert("Gagal mengirim pesan");
+          });
+      }
+
+      // TYPE.JS SCRIPT
+      var typed = new Typed(".typing", {
+        strings: [
+          "Freelancer",
+          "Web Developer",
+          "Front-End Engineer",
+          "Back-End Developer", // PERBAIKAN: Tambahkan opsi lain yang relevan
+        ],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+
+      // PERBAIKAN: Script untuk membuat link navigasi aktif saat di-scroll ke section tertentu
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        function changeNavActive() {
+          let index = sections.length;
+
+          while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+          navLinks.forEach((link) => link.classList.remove("active"));
+          if (index >= 0) {
+            const activeLink = document.querySelector(
+              `.nav-link[href="#${sections[index].id}"]`
+            );
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
         }
-    })
-    .catch(err => {
-        console.error(err);
-        alert("Gagal mengirim pesan");
-    });
-}
 
-
-              // TYPE.JS SCRIPT
-              var typed = new Typed(".typing", {
-                  strings: [
-                      "Freelancer",
-                      "Web Developer",
-                      "Front-End Engineer",
-                      "Back-End Developer" // PERBAIKAN: Tambahkan opsi lain yang relevan
-                  ],
-                  typeSpeed: 100,
-                  backSpeed: 60,
-                  loop: true,
-                  showCursor: true,
-                  cursorChar: '|'
-              });
-
-              // PERBAIKAN: Script untuk membuat link navigasi aktif saat di-scroll ke section tertentu
-              document.addEventListener('DOMContentLoaded', function () {
-                  const sections = document.querySelectorAll('section');
-                  const navLinks = document.querySelectorAll('.nav-link');
-
-                  function changeNavActive() {
-                      let index = sections.length;
-
-                      while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
-
-                      navLinks.forEach((link) => link.classList.remove('active'));
-                      if (index >= 0) {
-                          const activeLink = document.querySelector(`.nav-link[href="#${sections[index].id}"]`);
-                          if (activeLink) {
-                              activeLink.classList.add('active');
-                          }
-                      }
-                  }
-
-                  window.addEventListener('scroll', changeNavActive);
-                  changeNavActive();
-              });
+        window.addEventListener("scroll", changeNavActive);
+        changeNavActive();
+      });
     </script>
 
     <script
